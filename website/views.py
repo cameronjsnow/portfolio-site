@@ -54,3 +54,8 @@ def portfolio():
         # Add more projects as needed
     ]
     return render_template("portfolio.html", user=current_user, projects=projects)
+
+@views.route('/game')
+@login_required
+def game():
+    return render_template("game.html", user=current_user)

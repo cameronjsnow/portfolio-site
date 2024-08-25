@@ -29,9 +29,16 @@
         color: #3a5bbc;
         text-decoration: none;
         transition: color 0.3s ease;
+        display: inline-flex;
+        align-items: center;
     }
     .quick-links a:hover {
         color: #2c4690;
+    }
+
+    .quick-links i {
+        margin-right: 10px;
+        font-size: 1.2em;
     }
 </style>
 
@@ -49,13 +56,19 @@
     </div>
 
     <div class="section">
-        <h2>Quick Links</h2>
-        <ul class="quick-links">
-            <li><a href="{{ url_for('views.portfolio') }}">View My Portfolio</a></li>
-            <li><a href="{{ url_for('views.notes') }}">Notes</a></li>
-            <li><a href="https://github.com/cameronjsnow">GitHub</a></li>
-            <li><a href="https://linkedin.com/in/cameronjsnow">LinkedIn</a></li>
-        </ul>
+        <h2>Links</h2>
+    <ul class="quick-links">
+        <li>
+            <a href="https://github.com/cameronjsnow">
+                <i class="fab fa-github fa-github"></i> GitHub
+            </a>
+        </li>
+        <li>
+            <a href="https://linkedin.com/in/cameronjsnow">
+                <i class="fab fa-linkedin fa-linkedin"></i> LinkedIn
+            </a>
+        </li>
+    </ul>
     </div>
 </div>
 {% endblock %}
