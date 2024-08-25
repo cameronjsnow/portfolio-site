@@ -1,17 +1,139 @@
 {% extends "base.html" %}
-{% block title %}Portfolio{% endblock %}
+{% block title %}Cameron Snow - Portfolio{% endblock %}
 
 {% block content %}
-<h1 class="text-center mb-4">My Portfolio</h1>
-<div id="project-showcase"></div>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+    
+    .portfolio-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: 'Roboto', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        text-align: center;
+    }
+    h1, h2, h3 {
+        color: #3a5bbc;
+    }
+    .section {
+        margin-bottom: 50px;
+    }
+    .tech-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 10px 0;
+    }
+    .tech-list li {
+        display: inline-block;
+        margin: 5px;
+        padding: 5px 10px;
+        background-color: #f0f0f0;
+        border-radius: 15px;
+        font-size: 0.9em;
+    }
+    .project, .experience {
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 30px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .project p, .experience p {
+        margin: 10px 0;
+    }
+    .contact-info {
+        margin-bottom: 30px;
+    }
+    .contact-info a {
+        color: #3a5bbc;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    .contact-info a:hover {
+        text-decoration: underline;
+    }
+    .project-link {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 15px;
+        background-color: #3a5bbc;
+        color: white;
+        text-decoration: none;
+        border-radius: 20px;
+        transition: background-color 0.3s ease;
+    }
+    .project-link:hover {
+        background-color: #2c4690;
+    }
+</style>
 
-<script id="project-data" type="application/json">
-  {{ projects | tojson | safe }}
-</script>
+<div class="portfolio-content">
+    <h1>Cameron Snow</h1>
+    
+    <div class="contact-info">
+        <a href="mailto:cameron.snow01@gmail.com">cameron.snow01@gmail.com</a> |
+        <a href="https://linkedin.com/in/cameronjsnow">LinkedIn</a> |
+        <a href="https://github.com/cameronjsnow">GitHub</a>
+    </div>
 
+    <div class="section">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Stock Data Visualization Tool</h3>
+            <p>A web-based tool for visualizing stock market data through interactive charts and graphs. It provides insights into stock performance, trends, and comparative analysis.</p>
+            <ul class="tech-list">
+                <li>Python</li>
+                <li>Flask</li>
+                <li>Pygal</li>
+                <li>HTML/CSS</li>
+                <li>Docker</li>
+            </ul>
+            <p>Key features: Real-time data visualization, interactive charts, multi-stock comparison</p>
+            <a href="https://github.com/cameronjsnow/stock-visualizer" class="project-link">View Project</a>
+        </div>
+        <div class="project">
+            <h3>Trip Reservation System</h3>
+            <p>A full-stack web application enabling users to book trip reservations with an intuitive seat selection interface. Includes admin dashboard for booking management and sales tracking.</p>
+            <ul class="tech-list">
+                <li>Python</li>
+                <li>Flask</li>
+                <li>SQLite</li>
+                <li>HTML/CSS</li>
+                <li>JavaScript</li>
+                <li>Docker</li>
+            </ul>
+            <p>Key features: Secure authentication, real-time seat updates, e-ticket generation, dynamic pricing</p>
+            <a href="https://github.com/cameronjsnow/trip-reservation" class="project-link">View Project</a>
+        </div>
+    </div>
 
-<script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-<script type="text/babel" src="{{ url_for('static', filename='js/projectShowcase.js') }}"></script>
+    <div class="section">
+        <h2>Professional Experience</h2>
+        <div class="experience">
+            <h3>Data Entry/Analyst Intern</h3>
+            <p>The Marcus Harris Foundation, Remote (Summer 2024)</p>
+            <ul class="tech-list">
+                <li>Data Analysis</li>
+                <li>Process Optimization</li>
+                <li>Task Automation</li>
+            </ul>
+            <p>Optimized data harvesting processes, conducted in-depth analysis of email marketing campaigns, and automated repetitive data entry tasks using programming skills.</p>
+        </div>
+        <div class="experience">
+            <h3>Contributing Writer</h3>
+            <p>The Hard Times / Hard Drive, Remote (March 2023 – Present)</p>
+            <ul class="tech-list">
+                <li>Content Creation</li>
+                <li>Analytics</li>
+                <li>Collaboration</li>
+            </ul>
+            <p>Authored 30+ timely satirical humor pieces, collaborated with the editorial team, and utilized analytics to identify high-engagement topics for a million-plus follower audience.</p>
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -6,10 +6,15 @@ import json
 
 views = Blueprint('views', __name__)
 
-
-@views.route('/', methods=['GET', 'POST'])
+@views.route('/')
 @login_required
 def home():
+    return render_template("home.html", user=current_user)
+
+
+@views.route('/notes', methods=['GET', 'POST'])
+@login_required
+def notes():
     if request.method == 'POST':
         note = request.form.get('note')
 
@@ -22,7 +27,7 @@ def home():
             flash('Note added!', category='success')
         
             
-    return render_template("home.html", user=current_user)
+    return render_template("notes.html", user=current_user)
 
 @views.route('/delete-note', methods=['POST'])
 def delete_note():
@@ -37,14 +42,15 @@ def delete_note():
 
 
 @views.route('/portfolio')
+@login_required
 def portfolio():
     projects = [
         {
-            "title": "Note Taking App",
-            "description": "A web application for creating and managing personal notes.",
-            "technologies": ["Python", "Flask", "SQLAlchemy", "HTML", "CSS", "JavaScript"],
-            "link": "https://github.com/cameronjsnow"
+            "title": "Stock Data Visualization Tool",
+            "description": "A web-based tool using Python, Flask, and Pygal for visualizing stock data.",
+            "technologies": ["Python", "Flask", "HTML", "Docker"],
+            "link": "https://github.com/yourusername/stock-visualizer"
         },
-        # Add more project dictionaries here
+        # Add more projects as needed
     ]
     return render_template("portfolio.html", user=current_user, projects=projects)
