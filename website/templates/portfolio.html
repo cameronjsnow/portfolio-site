@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Cameron Snow - Portfolio{% endblock %}
+{% block title %}Cameron Snow - CS/IT Portfolio{% endblock %}
 
 {% block content %}
 <style>
@@ -12,13 +12,37 @@
         font-family: 'Roboto', sans-serif;
         line-height: 1.6;
         color: #333;
+    }
+    h1, h2 {
+        color: #3a5bbc;
         text-align: center;
     }
-    h1, h2, h3 {
-        color: #3a5bbc;
+    h1 {
+        margin-bottom: 10px;
     }
-    .section {
-        margin-bottom: 50px;
+    h2 {
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+    .contact-info {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .contact-info a {
+        color: #3a5bbc;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    .project, .experience {
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .project h3, .experience h3 {
+        color: #3a5bbc;
+        margin-top: 0;
     }
     .tech-list {
         list-style-type: none;
@@ -27,113 +51,84 @@
     }
     .tech-list li {
         display: inline-block;
-        margin: 5px;
+        background-color: #e0e0e0;
         padding: 5px 10px;
-        background-color: #f0f0f0;
+        margin: 2px;
         border-radius: 15px;
         font-size: 0.9em;
     }
-    .project, .experience {
-        background-color: #f9f9f9;
-        border-radius: 8px;
-        padding: 20px;
-        margin-bottom: 30px;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .project p, .experience p {
-        margin: 10px 0;
-    }
-    .contact-info {
-        margin-bottom: 30px;
-    }
-    .contact-info a {
-        color: #3a5bbc;
-        text-decoration: none;
-        margin: 0 10px;
-    }
-    .contact-info a:hover {
-        text-decoration: underline;
-    }
-    .project-link {
+    .project-button {
         display: inline-block;
-        margin-top: 10px;
-        padding: 8px 15px;
         background-color: #3a5bbc;
         color: white;
+        padding: 8px 15px;
+        border-radius: 5px;
         text-decoration: none;
-        border-radius: 20px;
-        transition: background-color 0.3s ease;
+        margin-top: 10px;
+        transition: background-color 0.3s;
     }
-    .project-link:hover {
+    .project-button:hover {
         background-color: #2c4690;
     }
 </style>
 
 <div class="portfolio-content">
-    <h1>Cameron Snow</h1>
-    
+    <h1>CS/IT Portfolio</h1>
     <div class="contact-info">
         <a href="mailto:cameron.snow01@gmail.com">cameron.snow01@gmail.com</a> |
         <a href="https://linkedin.com/in/cameronjsnow">LinkedIn</a> |
         <a href="https://github.com/cameronjsnow">GitHub</a>
     </div>
 
-    <div class="section">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Stock Data Visualization Tool</h3>
-            <p>A web-based tool for visualizing stock market data through interactive charts and graphs. It provides insights into stock performance, trends, and comparative analysis.</p>
-            <ul class="tech-list">
-                <li>Python</li>
-                <li>Flask</li>
-                <li>Pygal</li>
-                <li>HTML/CSS</li>
-                <li>Docker</li>
-            </ul>
-            <p>Key features: Real-time data visualization, interactive charts, multi-stock comparison</p>
-            <a href="https://github.com/cameronjsnow/stock-visualizer" class="project-link">View Project</a>
-        </div>
-        <div class="project">
-            <h3>Trip Reservation System</h3>
-            <p>A full-stack web application enabling users to book trip reservations with an intuitive seat selection interface. Includes admin dashboard for booking management and sales tracking.</p>
-            <ul class="tech-list">
-                <li>Python</li>
-                <li>Flask</li>
-                <li>SQLite</li>
-                <li>HTML/CSS</li>
-                <li>JavaScript</li>
-                <li>Docker</li>
-            </ul>
-            <p>Key features: Secure authentication, real-time seat updates, e-ticket generation, dynamic pricing</p>
-            <a href="https://github.com/cameronjsnow/trip-reservation" class="project-link">View Project</a>
-        </div>
+    <h2>Projects</h2>
+    <div class="project">
+        <h3>Stock Data Visualization Tool</h3>
+        <p>A web-based tool for visualizing stock market data through interactive charts and graphs. It provides insights into stock performance, trends, and comparative analysis.</p>
+        <ul class="tech-list">
+            <li>Python</li>
+            <li>Flask</li>
+            <li>Pygal</li>
+            <li>HTML/CSS</li>
+            <li>Docker</li>
+        </ul>
+        <p><strong>Key features:</strong> Real-time data visualization, interactive charts, multi-stock comparison</p>
+        <a href="https://github.com/cameronjsnow/Stock_Visualizer_Project" class="project-button">View Project</a>
     </div>
 
-    <div class="section">
-        <h2>Professional Experience</h2>
-        <div class="experience">
-            <h3>Data Entry/Analyst Intern</h3>
-            <p>The Marcus Harris Foundation, Remote (Summer 2024)</p>
-            <ul class="tech-list">
-                <li>Data Analysis</li>
-                <li>Process Optimization</li>
-                <li>Task Automation</li>
-            </ul>
-            <p>Optimized data harvesting processes, conducted in-depth analysis of email marketing campaigns, and automated repetitive data entry tasks using programming skills.</p>
-        </div>
-        <div class="experience">
-            <h3>Contributing Writer</h3>
-            <p>The Hard Times / Hard Drive, Remote (March 2023 – Present)</p>
-            <ul class="tech-list">
-                <li>Content Creation</li>
-                <li>Analytics</li>
-                <li>Collaboration</li>
-            </ul>
-            <p>Authored 30+ timely satirical humor pieces, collaborated with the editorial team, and utilized analytics to identify high-engagement topics for a million-plus follower audience.</p>
-        </div>
+    <div class="project">
+        <h3>Trip Reservation System</h3>
+        <p>A full-stack web application enabling users to book trip reservations with an intuitive seat selection interface. Includes admin dashboard for booking management and sales tracking.</p>
+        <ul class="tech-list">
+            <li>Python</li>
+            <li>Flask</li>
+            <li>SQLite</li>
+            <li>JavaScript</li>
+            <li>HTML/CSS</li>
+            <li>Docker</li>
+        </ul>
+        <p><strong>Key features:</strong> Secure authentication, real-time seat updates, e-ticket generation, dynamic pricing</p>
+        <a href="https://github.com/cameronjsnow/Reservation-System" class="project-button">View Project</a>
+    </div>
+
+    <h2>Professional Experience</h2>
+    <div class="experience">
+        <h3>Data Entry/Analyst Intern</h3>
+        <p><em>The Marcus Harris Foundation, Remote (Summer 2024)</em></p>
+        <ul>
+            <li>Optimized data harvesting processes, reducing collection time while enhancing data accuracy and integrity.</li>
+            <li>Conducted in-depth analysis of email marketing campaigns using data analytics tools.</li>
+            <li>Automated repetitive data entry tasks using programming skills.</li>
+        </ul>
+    </div>
+
+    <div class="experience">
+        <h3>Contributing Writer</h3>
+        <p><em>The Hard Times / Hard Drive, Remote (March 2023 – Present)</em></p>
+        <ul>
+            <li>Authored 30+ timely satirical humor pieces for a combined audience of over 1 million followers.</li>
+            <li>Collaborated with the editorial team to enhance and refine content.</li>
+            <li>Used analytics to identify topics with high engagement potential.</li>
+        </ul>
     </div>
 </div>
 {% endblock %}

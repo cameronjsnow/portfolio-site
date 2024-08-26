@@ -59,3 +59,8 @@ def portfolio():
 @login_required
 def game():
     return render_template("game.html", user=current_user)
+
+@views.route('/writing')
+@login_required
+def writing():
+    return render_template("writing.html", user=current_user)

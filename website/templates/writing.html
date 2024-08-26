@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}Cameron Snow - Writing{% endblock %}
+
+{% block content %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+    
+    .writing-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: 'Roboto', sans-serif;
+        line-height: 1.6;
+        color: #333;
+    }
+    h1 {
+        color: #3a5bbc;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .publication-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    .publication-item {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 16 / 9;
+    }
+    .publication-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    .publication-item:hover .publication-image {
+        transform: scale(1.05);
+    }
+    .publication-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    .publication-item:hover .publication-overlay {
+        opacity: 1;
+    }
+    .publication-title {
+        color: rgb(0, 0, 0);
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 10px;
+    }
+</style>
+
+<div class="writing-content">
+    <h1>Stuff I've Written</h1>
+    <div class="publication-grid">
+        <a href="https://hard-drive.net/author/cameron-snow" class="publication-item">
+            <img src="{{ url_for('static', filename='images/hard-drive-sample.jpg') }}" alt="Hard Drive" class="publication-image">
+            <div class="publication-overlay">
+                <h3 class="publication-title">Hard Drive</h3>
+            </div>
+        </a>
+        <a href="https://thehardtimes.net/author/cameron-snow" class="publication-item">
+            <img src="{{ url_for('static', filename='images/hard-times-sample.jpg') }}" alt="The Hard Times" class="publication-image">
+            <div class="publication-overlay">
+                <h3 class="publication-title">The Hard Times</h3>
+            </div>
+        </a>
+        <!-- Add more publication items as needed -->
+    </div>
+</div>
+{% endblock %}
