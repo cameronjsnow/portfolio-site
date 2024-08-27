@@ -21,8 +21,15 @@
                     <a class="nav-item nav-link text-dark" id="writing" href="/writing">Writing</a>
                     <a class="nav-item nav-link text-dark" id="notes" href="/notes">Notes</a>
                     <a class="nav-item nav-link text-dark" id="game" href="/game">Game</a>
-                    <a class="nav-item nav-link text-dark" id="logout" href="/logout">Logout</a>
                     
+                    {% endif %}
+                </div>
+                <div class="navbar-nav ml-auto">
+                    {% if user.is_authenticated %}
+                    <span class="navbar-text text-dark mr-3">
+                        Hello, {{ user.first_name }}!
+                    </span>
+                    <a class="nav-item nav-link text-dark" id="logout" href="/logout">Logout</a>
                     {% else %}
                     <a class="nav-item nav-link text-dark" id="login" href="/login">Login</a>
                     <a class="nav-item nav-link text-dark" id="sign-up" href="/sign-up">Sign Up</a>
